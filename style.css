@@ -1,0 +1,48 @@
+:root {
+    --body-pad: 20px;
+    --custom-font: "Inter";
+    --body-font: var(--custom-font), var(--sans-serif-font)
+}
+
+body {
+    font-size: 20px;
+}
+
+.schedule td {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.schedule tr {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.schedule tr:not(:last-child) {
+    border-bottom: 1px solid;
+}
+
+#header {
+    margin-bottom: 0;
+}
+
+input, textarea {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.grey {
+    color: grey;
+}
+a {
+    color: inherit;
+    font-weight: bold;
+}

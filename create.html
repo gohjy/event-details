@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create an Event</title>
+
+        <link href="https://gohjy.github.io/base-css/css/main.css" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Create an Event</h1>
+
+        <p class="grey">
+            Cross-timezone event? Check out <a href="https://dangeraspect.xyz/siege/event-time" target="_blank">DangerAspect's time zone event converter</a>.
+        </p>
+
+        <form id="createEventForm">
+            <h2>Basic details</h2>
+            <p class="flexcenter">
+                Title:&nbsp;
+                <input type="text" id="eventName" placeholder="Event name" class="full-width" required>
+            </p>
+
+            <p>
+                Date:
+                <input type="date" id="eventDate" placeholder="2020-01-01" required>
+            </p>
+
+            <p>
+                Time:
+                <input type="time" id="eventTime" step="1" placeholder="12:30:00" required>
+            </p>
+
+            <details>
+                <summary>
+                    <h2 style="display: inline-block; margin-bottom: 0;">Additional info <span style="font-weight: normal;">(optional)</span></h2>
+                </summary>
+                <p>
+                    Details:
+                    <br>
+                    <textarea id="eventDesc" placeholder="Event description" class="full-width" style="field-sizing: content; resize: vertical; min-height: 4lh;"></textarea>
+                </p>
+
+                <p class="flexcenter">
+                    Location:&nbsp;
+                    <input type="text" id="eventLoc" placeholder="Event location" class="full-width">
+                </p>
+            </details>
+
+            <p>
+                <input type="submit" value="Generate link" class="bold">
+            </p>
+        </form>
+
+        <script>
+            const form = document.querySelector("#createEventForm");
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+                const evName = document.querySelector("#eventName").value.trim();
+                const evDate = +new Date(...document.querySelector("#eventDate").value.split("-").map((z, i) => i === 1 ? z-1 : +z), ...document.querySelector("#eventTime").value.split(":").map(z => +z));
+                const evDesc = document.querySelector("#eventDesc").value.split("$").map(x => x.replaceAll("\n", "$n")).join("$$").trim();;
+                const evLoc = document.querySelector("#eventLoc").value.trim();
+
+                location.assign(`./details.html#name=${encodeURIComponent(evName)}&timestamp=${evDate}&desc=${evDesc}&loc=${evLoc}`)
+            })
+        </script>
+    </body>
+</html>
