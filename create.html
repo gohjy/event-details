@@ -35,9 +35,9 @@
                 <input type="time" id="eventTime" step="1" placeholder="12:30:00" required>
             </p>
 
-            <details>
-                <summary>
-                    <h2 style="display: inline-block; margin-bottom: 0;">Additional info <span style="font-weight: normal;">(optional)</span></h2>
+            <details id="additional-info">
+                <summary style="list-style-position: inside;">
+                    <h2 style="display: inline; margin-bottom: 0;">Additional info <span style="font-weight: normal;">(optional)</span></h2>
                 </summary>
                 <p>
                     Details:
@@ -66,7 +66,13 @@
                 const evLoc = document.querySelector("#eventLoc").value.trim();
 
                 location.assign(`./details.html#name=${encodeURIComponent(evName)}&timestamp=${evDate}&desc=${evDesc}&loc=${evLoc}`)
-            })
+            });
+
+            window.addEventListener("load", () => {
+                if (document.querySelector("#eventDesc").value.trim() || document.querySelector("#eventLoc").value.trim()) {
+                    document.querySelector("#additional-info").setAttribute("open", "");
+                }
+            });
         </script>
     </body>
 </html>
