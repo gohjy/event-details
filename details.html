@@ -11,50 +11,63 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+        <style>
+            body {
+                max-width: min(650px, 100%);
+                margin: 0 auto;
+            }
+
+            .main-content {
+                border-bottom: 1px solid;
+            }
+        </style>
+
     </head>
     <body>
         <h1 id="header">Loading...</h1>
 
-        <div class="event-info">
-            <p class="big" style="margin-top: .5em;">
-                <span class="big">
-                    <time id="event-time" class="big">&nbsp;</time>
-                </span>
-                <br>
-                <span id="event-date" class="big">&nbsp;</span>
-            </p>
-
-            <p id="event-desc">
-            </p>
-
-            <p>
-                <span id="event-loc"></span>
-            </p>
-        </div>
-
-        <table class="schedule full-width">
-            <!--
-            <tr>
-                <td>
-                    <span class="big bold">
-                        <time datetime="something">
-                            09:00
-                        </time>
+        <div class="main-content">
+            <div class="event-info">
+                <p class="big" style="margin-top: .5em;">
+                    <span class="big">
+                        <time id="event-time" class="big">&nbsp;</time>
                     </span>
                     <br>
-                    <span class="big">
-                        01 Jan 1970
-                    </span>
-                    <span>
-                        Event Plaza
-                    </span>
-                </td>
-                <td>
-                    Name Of Thing
-                </td>
-            </tr>
-            -->
-        </table>
+                    <span id="event-date" class="big">&nbsp;</span>
+                </p>
+
+                <p id="event-desc">
+                </p>
+
+                <p>
+                    <span id="event-loc"></span>
+                </p>
+            </div>
+
+            <table class="schedule full-width">
+                <!--
+                <tr>
+                    <td>
+                        <span class="big bold">
+                            <time datetime="something">
+                                09:00
+                            </time>
+                        </span>
+                        <br>
+                        <span class="big">
+                            01 Jan 1970
+                        </span>
+                        <span>
+                            Event Plaza
+                        </span>
+                    </td>
+                    <td>
+                        Name Of Thing
+                    </td>
+                </tr>
+                -->
+            </table>
+        </div>
 
         <footer class="grey small">
             <p>
