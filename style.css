@@ -1,7 +1,9 @@
 :root {
     --body-pad: 20px;
     --custom-font: "Inter";
-    --body-font: var(--custom-font), var(--sans-serif-font)
+    --body-font: var(--custom-font), var(--sans-serif-font);
+
+    color-scheme: dark;
 }
 
 body {
